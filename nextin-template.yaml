@@ -1,0 +1,519 @@
+x-nextin:
+  version: 1
+  mode: template
+
+proxies: []
+
+proxy-groups:
+  # =================自动测速组=================
+  - name: "🇭🇰 香港自动选择"
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)(港|HK|hk|Hong Kong|HongKong|hongkong)"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+
+  - name: "🇯🇵 日本自动选择"
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+
+  - name: "🇺🇲 美国自动选择"
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+
+  - name: "🇸🇬 新加坡自动选择"
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)(新加坡|坡|狮城|SG|Singapore)"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+
+  - name: "🇨🇳 台湾自动选择"
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)(台|新北|彰化|TW|Taiwan)"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+
+  # =================基础策略组=================
+  - name: "Default"
+    type: select
+    proxies:
+      - "🇯🇵 日本自动选择"
+      - "🇭🇰 香港自动选择"
+      - "🇸🇬 新加坡自动选择"
+      - "🇨🇳 台湾自动选择"
+      - "🇺🇲 美国自动选择"
+    include-all-proxies: true
+
+  - name: "Final"
+    type: select
+    proxies:
+      - "Default"
+      - "DIRECT"
+    include-all-proxies: true
+
+  # =================应用策略组=================
+  - name: "Telegram"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "ChatGPT"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Claude"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Google2 Gemini"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Bahamut"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Github"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Crypto"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Discord"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Google1 Youtube"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Netflix"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Disney"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Pikpak"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "HBO"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "OtherMedia"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Paypal"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Twitter"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Instagram"
+    type: select
+    # 如果你想让 Instagram 默认走台湾，可以把 "🇨🇳 台湾自动选择" 移到最前面
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "TikTok"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Apple"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Steam"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "SteamCN"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "OneDrive"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Microsoft"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "OKX"
+    type: select
+    proxies: ["Default", "DIRECT"]
+    include-all-proxies: true
+
+  - name: "Bili"
+    type: select
+    proxies: ["DIRECT", "Default"]
+    include-all-proxies: true
+
+  - name: "WeChat"
+    type: select
+    proxies: ["DIRECT", "Default"]
+    include-all-proxies: true
+
+
+# =================远程规则集=================
+rule-providers:
+  lan-cidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+  applications:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
+  Zhihu:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Zhihu/Zhihu.list"
+    path: ./ruleset/Zhihu.yaml
+    interval: 86400
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+  apple:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.list"
+    path: ./ruleset/YouTube.yaml
+    interval: 86400
+  Google:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.list"
+    path: ./ruleset/Google.yaml
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram.list"
+    path: ./ruleset/Telegram.yaml
+    interval: 86400
+  Bahamut:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Bahamut/Bahamut.list"
+    path: ./ruleset/Bahamut.yaml
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Steam/Steam.list"
+    path: ./ruleset/Steam.yaml
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.list"
+    path: ./ruleset/SteamCN.yaml
+    interval: 86400
+  GitHub:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list"
+    path: ./ruleset/GitHub.yaml
+    interval: 86400
+  Crypto:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/haha-miao/rule_file/refs/heads/main/clash/crypto/Crypto.yaml"
+    path: ./ruleset/Crypto.yaml
+    interval: 86400
+  Discord:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Discord/Discord.list"
+    path: ./ruleset/Discord.yaml
+    interval: 86400
+  OpenAI:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.list"
+    path: ./ruleset/OpenAI.yaml
+    interval: 86400
+  Claude:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/master/rule/Clash/Claude/Claude.yaml"
+    path: ./ruleset/Claude.yaml
+    interval: 86400
+  TikTok:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list"
+    path: ./ruleset/TikTok.yaml
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.list"
+    path: ./ruleset/Netflix.yaml
+    interval: 86400
+  PikPak:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/PikPak/PikPak.list"
+    path: ./ruleset/PikPak.yaml
+    interval: 86400
+  Disney:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Disney/Disney.list"
+    path: ./ruleset/Disney.yaml
+    interval: 86400
+  HBO:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list"
+    path: ./ruleset/HBO.yaml
+    interval: 86400
+  GlobalMedia:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/GlobalMedia/GlobalMedia.list"
+    path: ./ruleset/GlobalMedia.yaml
+    interval: 86400
+  PayPal:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/PayPal/PayPal.list"
+    path: ./ruleset/PayPal.yaml
+    interval: 86400
+  Twitter:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.list"
+    path: ./ruleset/Twitter.yaml
+    interval: 86400
+  Instagram:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Instagram/Instagram.list"
+    path: ./ruleset/Instagram.yaml
+    interval: 86400
+  OneDrive:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OneDrive/OneDrive.list"
+    path: ./ruleset/OneDrive.yaml
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.list"
+    path: ./ruleset/Microsoft.yaml
+    interval: 86400
+  BiliBili:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/BiliBili/BiliBili.list"
+    path: ./ruleset/BiliBili.yaml
+    interval: 86400
+  WeChat:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat.list"
+    path: ./ruleset/WeChat.yaml
+    interval: 86400
+  OKX:
+    type: http
+    behavior: classical
+    url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OKX/OKX.list"
+    path: ./ruleset/OKX.yaml
+    interval: 86400
+  gfw:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+
+# =================具体分流规则=================
+rules:
+  # ------ 自定义域名后缀规则 ------
+  - DOMAIN-SUFFIX,jsdelivr.net,Default
+  - DOMAIN-SUFFIX,ghfast.top,Default
+  - DOMAIN-SUFFIX,lucky666.cn,DIRECT
+  - DOMAIN-SUFFIX,dlandroid.rcv.sandai.net,Default
+  - DOMAIN-SUFFIX,embylife.xyz,Default
+  - DOMAIN-SUFFIX,emby.moe,Default
+  - DOMAIN-SUFFIX,xxlb.net,Default
+  - DOMAIN-SUFFIX,s.outong-valve.com,DIRECT
+  - DOMAIN-SUFFIX,liminalnet.site,Default
+  - DOMAIN-SUFFIX,ectrip.com,DIRECT
+  - DOMAIN-SUFFIX,uhdnow.com,Default
+
+  # ------ 进程名直连/代理规则 ------
+  # (注：iOS 会自动忽略 PROCESS-NAME 规则，但保留在此以备模板跨端使用)
+  - PROCESS-NAME,WsaClient.exe,Default
+  - PROCESS-NAME,Cursor,Default
+  - PROCESS-NAME,wpsoffice.exe,DIRECT
+  - PROCESS-NAME,wps.exe,DIRECT
+  - PROCESS-NAME,ET.exe,DIRECT
+  - PROCESS-NAME,crashpad_handler.exe,DIRECT
+  - PROCESS-NAME,TextInputHost.exe,DIRECT
+  - PROCESS-NAME,UserOOBEBroker.exe,DIRECT
+  - PROCESS-NAME,fontdrvhost.exe,DIRECT
+  - PROCESS-NAME,verge-mihomo.exe,DIRECT
+  - PROCESS-NAME,VideoUI.exe,DIRECT
+  - PROCESS-NAME,MAL.exe,DIRECT
+  - PROCESS-NAME,svchost.exe,DIRECT
+  - PROCESS-NAME,smss.exe,DIRECT
+  - PROCESS-NAME,wininit.exe,DIRECT
+  - PROCESS-NAME,WUHFHost.exe,DIRECT
+  - PROCESS-NAME,taskhostw.exe,DIRECT
+  - PROCESS-NAME,audiodg.exe,DIRECT
+  - PROCESS-NAME,explorer.exe,DIRECT
+  - PROCESS-NAME,wmiprvSE.exe,DIRECT
+  - PROCESS-NAME,YoudaoDictHelper.exe,DIRECT
+  - PROCESS-NAME,services.exe,DIRECT
+  - PROCESS-NAME,spoolsv.exe,DIRECT
+  - PROCESS-NAME,VolSnapshotX64.exe,DIRECT
+  - PROCESS-NAME,conhost.exe,DIRECT
+  - PROCESS-NAME,taskmgr.exe,DIRECT
+  - PROCESS-NAME,systemsettings.exe,DIRECT
+  - PROCESS-NAME,msedgewebview2.exe,DIRECT
+  - PROCESS-NAME,SGTool.exe,DIRECT
+  - PROCESS-NAME,qmbsrv.exe,DIRECT
+  - PROCESS-NAME,YoudaoDict.exe,DIRECT
+  - PROCESS-NAME,QQPCExternal.exe,DIRECT
+  - PROCESS-NAME,QQPCRTP.exe,DIRECT
+  - PROCESS-NAME,QQPCTray.exe,DIRECT
+  - PROCESS-NAME,dwm.exe,DIRECT
+  - PROCESS-NAME,AweSun.exe,DIRECT
+  - PROCESS-NAME,Weixin.exe,DIRECT
+  - PROCESS-NAME,downloader.exe,DIRECT
+  - PROCESS-NAME,OcxConfigClient.exe,DIRECT
+  - PROCESS-NAME,tidecoin-qt.exe,DIRECT
+  - PROCESS-NAME,DingTalk.exe,DIRECT
+  - PROCESS-NAME,DingtalkLauncher.exe,DIRECT
+  - PROCESS-NAME,iTunes.exe,DIRECT
+  - PROCESS-NAME,GacRunner.exe,DIRECT
+  - PROCESS-NAME,LootHoarder.exe,DIRECT
+  - PROCESS-NAME,WeChatAppEx.exe,DIRECT
+  - PROCESS-NAME,Binance.exe,DIRECT
+  - PROCESS-NAME,ispirit.exe,DIRECT
+  - PROCESS-NAME,HyperPlay.exe,DIRECT
+  - PROCESS-NAME,desktop.exe,DIRECT
+  - PROCESS-NAME,JianyingPro.exe,DIRECT
+  - PROCESS-NAME,uppdater.exe,DIRECT
+  - PROCESS-NAME,WeChatappEx.exe,DIRECT
+  - PROCESS-NAME,MadGlobal-Win64-Shipping.exe,DIRECT
+  - PROCESS-NAME,hexinhelper.exe,DIRECT
+  - PROCESS-NAME,hexin.exe,DIRECT
+  - PROCESS-NAME,MadGlobal.exe,DIRECT
+  - PROCESS-NAME,比特浏览器.exe,DIRECT
+  - PROCESS-NAME,uprock-mining.exe,DIRECT
+  - PROCESS-NAME,phpcoin-wallet-win.exe,DIRECT
+  - PROCESS-NAME,NightCrowsGLauncher.exe,DIRECT
+  - PROCESS-NAME,LetsPRO.exe,DIRECT
+  - PROCESS-NAME,Kryptokrona-wallet.exe,DIRECT
+  - PROCESS-NAME,mCloud.exe,DIRECT
+  - PROCESS-NAME,launcher.exe,DIRECT
+  - PROCESS-NAME,UCCloudDrive.exe,DIRECT
+  - PROCESS-NAME,OKX.exe,DIRECT
+  - PROCESS-NAME,BaiduNetdisk.exe,DIRECT
+  - PROCESS-NAME,eCloud.exe,DIRECT
+  - PROCESS-NAME,tdxw.exe,DIRECT
+  - PROCESS-NAME,hexinlauncher.exe,DIRECT
+  - PROCESS-NAME,SunloginClient.exe,DIRECT
+  - PROCESS-NAME,qq.exe,DIRECT
+  - PROCESS-NAME,WeChat.exe,DIRECT
+  - PROCESS-NAME,360chrome.exe,DIRECT
+  - PROCESS-NAME,dnplayer.exe,DIRECT
+  - PROCESS-NAME,dnmultiplayerex.exe,DIRECT
+
+  # ------ 规则集映射 ------
+  - RULE-SET,lan-cidr,DIRECT
+  - RULE-SET,applications,DIRECT
+  - RULE-SET,Zhihu,DIRECT
+  - RULE-SET,icloud,Apple
+  - RULE-SET,apple,Apple
+  - RULE-SET,YouTube,Google1 Youtube
+  - RULE-SET,Google,Google2 Gemini
+  - RULE-SET,Telegram,Telegram
+  - RULE-SET,Bahamut,Bahamut
+  - RULE-SET,Steam,Steam
+  - RULE-SET,SteamCN,SteamCN
+  - RULE-SET,GitHub,Github
+  - RULE-SET,Crypto,Crypto
+  - RULE-SET,Discord,Discord
+  - RULE-SET,OpenAI,ChatGPT
+  - RULE-SET,Claude,Claude
+  - RULE-SET,TikTok,TikTok
+  - RULE-SET,Netflix,Netflix
+  - RULE-SET,PikPak,Pikpak
+  - RULE-SET,Disney,Disney
+  - RULE-SET,HBO,HBO
+  - RULE-SET,GlobalMedia,OtherMedia
+  - RULE-SET,PayPal,Paypal
+  - RULE-SET,Twitter,Twitter
+  - RULE-SET,Instagram,Instagram
+  - RULE-SET,OneDrive,OneDrive
+  - RULE-SET,Microsoft,Microsoft
+  - RULE-SET,BiliBili,Bili
+  - RULE-SET,WeChat,WeChat
+  - RULE-SET,OKX,OKX
+  - RULE-SET,gfw,Default
+
+  # ------ 兜底规则 ------
+  - GEOIP,CN,DIRECT
+  - MATCH,Final
