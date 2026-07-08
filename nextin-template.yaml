@@ -214,7 +214,7 @@ rule-providers:
   Zhihu:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Zhihu/Zhihu.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Zhihu/Zhihu_No_Resolve.yaml"
     path: ./ruleset/Zhihu.yaml
     interval: 86400
   icloud:
@@ -232,43 +232,43 @@ rule-providers:
   YouTube:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube_No_Resolve.yaml"
     path: ./ruleset/YouTube.yaml
     interval: 86400
   Google:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Google/Google.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Google/Google_No_Resolve.yaml"
     path: ./ruleset/Google.yaml
     interval: 86400
   Telegram:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Telegram/Telegram_No_Resolve.yaml"
     path: ./ruleset/Telegram.yaml
     interval: 86400
   Bahamut:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Bahamut/Bahamut.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Bahamut/Bahamut_No_Resolve.yaml"
     path: ./ruleset/Bahamut.yaml
     interval: 86400
   Steam:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Steam/Steam.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Steam/Steam_No_Resolve.yaml"
     path: ./ruleset/Steam.yaml
     interval: 86400
   SteamCN:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/SteamCN/SteamCN_No_Resolve.yaml"
     path: ./ruleset/SteamCN.yaml
     interval: 86400
   GitHub:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub_No_Resolve.yaml"
     path: ./ruleset/GitHub.yaml
     interval: 86400
   Crypto:
@@ -280,13 +280,13 @@ rule-providers:
   Discord:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Discord/Discord.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Discord/Discord_No_Resolve.yaml"
     path: ./ruleset/Discord.yaml
     interval: 86400
   OpenAI:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI_No_Resolve.yaml"
     path: ./ruleset/OpenAI.yaml
     interval: 86400
   Claude:
@@ -298,85 +298,85 @@ rule-providers:
   TikTok:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok_No_Resolve.yaml"
     path: ./ruleset/TikTok.yaml
     interval: 86400
   Netflix:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix_No_Resolve.yaml"
     path: ./ruleset/Netflix.yaml
     interval: 86400
   PikPak:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/PikPak/PikPak.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/PikPak/PikPak_No_Resolve.yaml"
     path: ./ruleset/PikPak.yaml
     interval: 86400
   Disney:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Disney/Disney.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Disney/Disney_No_Resolve.yaml"
     path: ./ruleset/Disney.yaml
     interval: 86400
   HBO:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO_No_Resolve.yaml"
     path: ./ruleset/HBO.yaml
     interval: 86400
   GlobalMedia:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/GlobalMedia/GlobalMedia.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/GlobalMedia/GlobalMedia_No_Resolve.yaml"
     path: ./ruleset/GlobalMedia.yaml
     interval: 86400
   PayPal:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/PayPal/PayPal.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/PayPal/PayPal_No_Resolve.yaml"
     path: ./ruleset/PayPal.yaml
     interval: 86400
   Twitter:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter_No_Resolve.yaml"
     path: ./ruleset/Twitter.yaml
     interval: 86400
   Instagram:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Instagram/Instagram.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Instagram/Instagram_No_Resolve.yaml"
     path: ./ruleset/Instagram.yaml
     interval: 86400
   OneDrive:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OneDrive/OneDrive.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OneDrive/OneDrive_No_Resolve.yaml"
     path: ./ruleset/OneDrive.yaml
     interval: 86400
   Microsoft:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft_No_Resolve.yaml"
     path: ./ruleset/Microsoft.yaml
     interval: 86400
   BiliBili:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/BiliBili/BiliBili.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/BiliBili/BiliBili_No_Resolve.yaml"
     path: ./ruleset/BiliBili.yaml
     interval: 86400
   WeChat:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/ericz15/ios_rule_script/refs/heads/master/rule/Clash/WeChat/WeChat_No_Resolve.yaml"
     path: ./ruleset/WeChat.yaml
     interval: 86400
   OKX:
     type: http
     behavior: classical
-    url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OKX/OKX.list"
+    url: "https://ghfast.top/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OKX/OKX_No_Resolve.yaml"
     path: ./ruleset/OKX.yaml
     interval: 86400
   gfw:
